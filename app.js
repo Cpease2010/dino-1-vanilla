@@ -3,7 +3,7 @@ const apiURL = 'https://dino-1-server.herokuapp.com/'
 
 
 function postJob(){
-    let job = {'title': jobForm.title.value, 'pay': jobForm.pay.value,'description': jobForm.description.value,'interested': '0 dinos interested in this job'}
+    let job = {'title': jobForm.title.value, 'pay': jobForm.pay.value, 'description': jobForm.description.value,'interested': []}
     createListing(job)
 }
 
@@ -21,7 +21,7 @@ function createListing(job) {
     newJob.append(jobPay)
     jobDescription.innerText = job.description
     newJob.append(jobDescription)
-    jobInterest.innerText = job.interested
+    jobInterest.innerText = `${job.interested.length} dinosaurs are interested in this job.`
     newJob.append(jobInterest)
     jobListings.append(newJob)
 }
